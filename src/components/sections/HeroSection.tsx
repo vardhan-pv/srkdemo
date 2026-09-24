@@ -13,10 +13,10 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] sm:min-h-screen flex items-center pt-20 pb-16 lg:py-28 overflow-hidden"
+      className="relative min-h-[92vh] sm:min-h-screen flex items-center pt-24 pb-14 lg:py-28 overflow-hidden bg-[#faf8f4]"
       aria-label="SRK Interiors hero section"
     >
-      {/* Background Image with Dark Tinted Overlays */}
+      {/* Background Image: Bright, Sunlit Luxury Living Room */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero.jpg"
@@ -27,100 +27,91 @@ export default function HeroSection() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Layered overlays to guarantee 100% WCAG text contrast across any image luminance */}
-        <div className="absolute inset-0 bg-black/75 sm:bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40 sm:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+        {/* Soft, minimal ambient veil that preserves the bright, sunny interior photo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-transparent sm:from-black/25" />
       </div>
 
-      {/* Content Container */}
+      {/* Content Container: Floating Luxury White Frosted Card */}
       <div className="container relative z-10">
-        <div className="max-w-2xl lg:max-w-3xl">
+        <div className="max-w-xl bg-white/95 sm:bg-white/90 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-white/80 shadow-2xl">
           {/* Eyebrow Label */}
-          <div className="inline-flex items-center gap-2.5 mb-5 px-3.5 py-1.5 rounded-full bg-[#c99a3d]/20 border border-[#c99a3d]/40 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-[#e8c96a] animate-pulse" />
-            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
+          <div className="inline-flex items-center gap-2 mb-3.5 px-3 py-1 rounded-full bg-[#fdf8ee] border border-[#f5e9c8]">
+            <span className="w-2 h-2 rounded-full bg-[#c99a3d]" />
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-[#c99a3d]">
               Interior Designers in Chintamani
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-white text-3xl sm:text-5xl lg:text-6xl font-bold mb-5 leading-[1.15] tracking-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#111111] mb-3 leading-[1.2] tracking-tight">
             Beautiful Interiors.
-            <span className="block italic text-[#e8c96a] font-normal mt-1">
+            <span className="block italic text-[#c99a3d] font-normal mt-0.5">
               Designed Around You.
             </span>
           </h1>
 
           {/* Supporting text */}
-          <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-8 max-w-xl font-normal drop-shadow-sm">
+          <p className="text-[#4a4a4a] text-sm sm:text-base leading-relaxed mb-6 font-normal">
             Custom home interiors, modular kitchens and complete interior
             solutions crafted for your lifestyle, space and budget.
           </p>
 
-          {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10 max-w-md sm:max-w-none">
+          {/* Action CTAs: 2 clear high-conversion buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6">
             <a
               href="#contact"
-              className="btn btn-primary text-base px-7 py-3.5 shadow-lg text-center"
+              className="btn btn-primary text-sm sm:text-base px-6 py-3 shadow-md text-center"
               id="hero-consultation-btn"
             >
               Get Free Consultation
             </a>
             <a
-              href={getWhatsAppUrl()}
+              href={getWhatsAppUrl("Hello SRK Interiors, I would like to discuss my home interior requirements.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp text-base px-6 py-3.5 shadow-lg text-center"
+              className="btn btn-whatsapp text-sm sm:text-base px-5 py-3 shadow-md text-center inline-flex items-center justify-center gap-2"
               id="hero-whatsapp-btn"
               onClick={handleWhatsApp}
               aria-label="Chat with SRK Interiors on WhatsApp"
             >
-              <WhatsAppIcon className="w-5 h-5" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Chat on WhatsApp</span>
-            </a>
-            <a
-              href="#projects"
-              className="btn btn-outline-white text-base px-6 py-3.5 text-center"
-              id="hero-projects-btn"
-            >
-              View Projects
             </a>
           </div>
 
-          {/* Trust Strip */}
-          <div className="pt-6 border-t border-white/20 grid grid-cols-3 gap-2 sm:gap-6 max-w-md">
+          {/* Trust Strip inside the card */}
+          <div className="pt-4 border-t border-[#f0ece4] grid grid-cols-3 gap-2 text-center sm:text-left">
             {/* Rating */}
-            <div className="text-center sm:text-left">
-              <div className="text-[#e8c96a] text-xs sm:text-sm tracking-wider mb-1" aria-label="5 star rating">
+            <div>
+              <div className="text-[#c99a3d] text-xs sm:text-sm tracking-wider mb-0.5" aria-label="5 star rating">
                 ★★★★★
               </div>
-              <div className="text-white font-bold text-lg sm:text-xl leading-none">
+              <div className="text-[#111] font-bold text-sm sm:text-base leading-none">
                 {BUSINESS.rating} / 5.0
               </div>
-              <div className="text-white/70 text-[11px] sm:text-xs mt-1">Google Rating</div>
+              <div className="text-[#777] text-[10px] sm:text-xs mt-0.5">Google Rating</div>
             </div>
 
             {/* Reviews */}
-            <div className="text-center sm:text-left border-l border-white/20 pl-2 sm:pl-6">
-              <div className="text-[#e8c96a] text-xs sm:text-sm font-semibold mb-1">
+            <div className="border-l border-[#f0ece4] pl-2 sm:pl-4">
+              <div className="text-[#c99a3d] text-xs font-semibold mb-0.5">
                 Verified
               </div>
-              <div className="text-white font-bold text-lg sm:text-xl leading-none">
-                {BUSINESS.reviewCount}+
+              <div className="text-[#111] font-bold text-sm sm:text-base leading-none">
+                {BUSINESS.reviewCount}+ Reviews
               </div>
-              <div className="text-white/70 text-[11px] sm:text-xs mt-1">Happy Clients</div>
+              <div className="text-[#777] text-[10px] sm:text-xs mt-0.5">Happy Clients</div>
             </div>
 
             {/* Location */}
-            <div className="text-center sm:text-left border-l border-white/20 pl-2 sm:pl-6">
-              <div className="text-[#e8c96a] text-xs sm:text-sm font-semibold mb-1">
-                Chintamani
+            <div className="border-l border-[#f0ece4] pl-2 sm:pl-4">
+              <div className="text-[#c99a3d] text-xs font-semibold mb-0.5">
+                Studio
               </div>
-              <div className="text-white font-bold text-lg sm:text-xl leading-none">
-                Local Team
+              <div className="text-[#111] font-bold text-sm sm:text-base leading-none">
+                Chelur Rd
               </div>
-              <div className="text-white/70 text-[11px] sm:text-xs mt-1">Karnataka</div>
+              <div className="text-[#777] text-[10px] sm:text-xs mt-0.5">Chintamani</div>
             </div>
           </div>
         </div>
