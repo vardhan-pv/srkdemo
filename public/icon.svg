@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Background circle -->
+  <circle cx="24" cy="24" r="24" fill="#111111"/>
+  <!-- House/roof icon in gold -->
+  <g transform="translate(10, 8)">
+    <!-- Roof -->
+    <polygon points="14,4 26,14 2,14" fill="none" stroke="#C99A3D" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- House body -->
+    <rect x="5" y="14" width="18" height="14" rx="0.5" fill="none" stroke="#C99A3D" stroke-width="1.5"/>
+    <!-- Door -->
+    <rect x="11" y="20" width="6" height="8" rx="0.5" fill="#C99A3D" opacity="0.6"/>
+    <!-- Peak dot -->
+    <circle cx="14" cy="4" r="1.5" fill="#C99A3D"/>
+  </g>
+</svg>
