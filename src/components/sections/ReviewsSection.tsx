@@ -7,7 +7,7 @@ export default function ReviewsSection() {
   return (
     <section
       id="reviews"
-      className="section-py"
+      className="section-py bg-[#0a0a0a]"
       aria-labelledby="reviews-heading"
     >
       <div className="container">
@@ -15,27 +15,27 @@ export default function ReviewsSection() {
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c99a3d]">
+            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
               Google Reviews
             </span>
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
           </div>
-          <h2 id="reviews-heading" className="text-2xl sm:text-4xl font-bold text-[#111] mb-4">
+          <h2 id="reviews-heading" className="text-2xl sm:text-4xl font-bold text-white mb-4">
             Trusted by Chintamani Homeowners
           </h2>
-          <p className="text-[#6b6b6b] text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
             Real customer experiences directly from our Google Business Profile.
           </p>
 
           {/* Rating Summary Bar */}
-          <div className="inline-flex items-center justify-center gap-3 mt-6 px-4 py-2 bg-[#fdf8ee] border border-[#f5e9c8] rounded-full">
-            <div className="flex text-[#c99a3d] text-base tracking-wider" aria-label="5 out of 5 stars">
+          <div className="inline-flex items-center justify-center gap-3 mt-6 px-4 py-2 bg-[#c99a3d]/10 border border-[#c99a3d]/30 rounded-full">
+            <div className="flex text-[#d4af37] text-base tracking-wider" aria-label="5 out of 5 stars">
               ★★★★★
             </div>
-            <span className="text-sm font-bold text-[#111]">
+            <span className="text-sm font-bold text-white">
               5.0 / 5.0
             </span>
-            <span className="text-xs text-[#6b6b6b]">
+            <span className="text-xs text-gray-400">
               · {BUSINESS.reviewCount}+ Google Reviews
             </span>
           </div>
@@ -44,33 +44,35 @@ export default function ReviewsSection() {
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.map((review) => (
-            <div key={review.id} className="review-card">
-              {/* Top: Star rating + Quote Icon */}
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex text-[#c99a3d] text-sm tracking-wider" aria-label={`${review.rating} star review`}>
-                  {"★".repeat(review.rating)}
+            <div key={review.id} className="bg-[#141414] border border-[#c99a3d]/25 rounded-2xl p-6 hover:border-[#c99a3d] hover:shadow-[0_8px_30px_rgba(201,154,61,0.15)] transition-all flex flex-col justify-between">
+              <div>
+                {/* Top: Star rating + Quote Icon */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex text-[#d4af37] text-sm tracking-wider" aria-label={`${review.rating} star review`}>
+                    {"★".repeat(review.rating)}
+                  </div>
+                  <QuoteIcon className="w-6 h-6 text-[#c99a3d]/40" />
                 </div>
-                <QuoteIcon className="w-6 h-6 text-[#c99a3d]/30" />
+
+                {/* Review Text */}
+                <blockquote className="text-gray-300 text-sm leading-relaxed mb-6 font-normal">
+                  &ldquo;{review.text}&rdquo;
+                </blockquote>
               </div>
 
-              {/* Review Text */}
-              <blockquote className="text-[#333333] text-sm leading-relaxed mb-6 flex-1 font-normal">
-                &ldquo;{review.text}&rdquo;
-              </blockquote>
-
               {/* Reviewer Meta */}
-              <div className="flex items-center justify-between pt-4 border-t border-[#f0ece4] mt-auto">
+              <div className="flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
                 <div>
-                  <p className="font-semibold text-sm text-[#111]">
+                  <p className="font-semibold text-sm text-white">
                     {review.name}
                   </p>
-                  <p className="text-xs text-[#9a9a9a] mt-0.5">{review.date}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{review.date}</p>
                 </div>
                 <a
                   href={review.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-[#6b6b6b] hover:text-[#c99a3d] transition-colors font-medium bg-[#f8f8f8] px-2.5 py-1 rounded-md"
+                  className="inline-flex items-center gap-1.5 text-xs text-gray-300 hover:text-[#d4af37] transition-colors font-medium bg-white/5 border border-white/10 px-2.5 py-1 rounded-md"
                   aria-label="View this review on Google"
                 >
                   <GoogleIcon className="w-3.5 h-3.5" />

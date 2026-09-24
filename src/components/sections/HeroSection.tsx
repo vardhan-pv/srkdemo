@@ -13,10 +13,10 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] sm:min-h-screen flex items-center pt-24 pb-14 lg:py-28 overflow-hidden bg-[#faf8f4]"
+      className="relative min-h-[92vh] sm:min-h-screen flex items-center pt-24 pb-14 lg:py-28 overflow-hidden bg-[#0a0a0a]"
       aria-label="SRK Interiors hero section"
     >
-      {/* Background Image: Bright, Sunlit Luxury Living Room */}
+      {/* Background Image: Rich Cinematic Interior with Dark Gold Atmosphere */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero.jpg"
@@ -27,40 +27,41 @@ export default function HeroSection() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Soft, minimal ambient veil that preserves the bright, sunny interior photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-black/15 to-transparent sm:from-black/25" />
+        {/* Cinematic dark veil letting the golden chandeliers and lights shine through */}
+        <div className="absolute inset-0 bg-black/55 sm:bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-[#0a0a0a]/65 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/40" />
       </div>
 
-      {/* Content Container: Floating Luxury White Frosted Card */}
+      {/* Content Container: Luxury Obsidian & Gold Glass Card */}
       <div className="container relative z-10">
-        <div className="max-w-xl bg-white/95 sm:bg-white/90 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-white/80 shadow-2xl">
+        <div className="max-w-xl bg-[#121212]/85 backdrop-blur-md rounded-2xl p-5 sm:p-8 border border-[#c99a3d]/35 shadow-[0_12px_40px_rgba(0,0,0,0.8)]">
           {/* Eyebrow Label */}
-          <div className="inline-flex items-center gap-2 mb-3.5 px-3 py-1 rounded-full bg-[#fdf8ee] border border-[#f5e9c8]">
-            <span className="w-2 h-2 rounded-full bg-[#c99a3d]" />
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-[#c99a3d]">
+          <div className="inline-flex items-center gap-2 mb-3.5 px-3 py-1 rounded-full bg-[#c99a3d]/15 border border-[#c99a3d]/35">
+            <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-[#f5e9c8]">
               Interior Designers in Chintamani
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#111111] mb-3 leading-[1.2] tracking-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 leading-[1.2] tracking-tight">
             Beautiful Interiors.
-            <span className="block italic text-[#c99a3d] font-normal mt-0.5">
+            <span className="block italic text-[#d4af37] font-normal mt-0.5">
               Designed Around You.
             </span>
           </h1>
 
           {/* Supporting text */}
-          <p className="text-[#4a4a4a] text-sm sm:text-base leading-relaxed mb-6 font-normal">
-            Custom home interiors, modular kitchens and complete interior
-            solutions crafted for your lifestyle, space and budget.
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+            Custom home interiors, modular kitchens and complete turnkey solutions crafted for your lifestyle, space and budget.
           </p>
 
-          {/* Action CTAs: 2 clear high-conversion buttons */}
+          {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-6">
             <a
               href="#contact"
-              className="btn btn-primary text-sm sm:text-base px-6 py-3 shadow-md text-center"
+              className="btn btn-primary text-sm sm:text-base px-6 py-3 text-center"
               id="hero-consultation-btn"
             >
               Get Free Consultation
@@ -69,7 +70,7 @@ export default function HeroSection() {
               href={getWhatsAppUrl("Hello SRK Interiors, I would like to discuss my home interior requirements.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp text-sm sm:text-base px-5 py-3 shadow-md text-center inline-flex items-center justify-center gap-2"
+              className="btn btn-whatsapp text-sm sm:text-base px-5 py-3 text-center inline-flex items-center justify-center gap-2"
               id="hero-whatsapp-btn"
               onClick={handleWhatsApp}
               aria-label="Chat with SRK Interiors on WhatsApp"
@@ -80,38 +81,38 @@ export default function HeroSection() {
           </div>
 
           {/* Trust Strip inside the card */}
-          <div className="pt-4 border-t border-[#f0ece4] grid grid-cols-3 gap-2 text-center sm:text-left">
+          <div className="pt-4 border-t border-white/10 grid grid-cols-3 gap-2 text-center sm:text-left">
             {/* Rating */}
             <div>
-              <div className="text-[#c99a3d] text-xs sm:text-sm tracking-wider mb-0.5" aria-label="5 star rating">
+              <div className="text-[#d4af37] text-xs sm:text-sm tracking-wider mb-0.5" aria-label="5 star rating">
                 ★★★★★
               </div>
-              <div className="text-[#111] font-bold text-sm sm:text-base leading-none">
+              <div className="text-white font-bold text-sm sm:text-base leading-none">
                 {BUSINESS.rating} / 5.0
               </div>
-              <div className="text-[#777] text-[10px] sm:text-xs mt-0.5">Google Rating</div>
+              <div className="text-gray-400 text-[10px] sm:text-xs mt-0.5">Google Rating</div>
             </div>
 
             {/* Reviews */}
-            <div className="border-l border-[#f0ece4] pl-2 sm:pl-4">
-              <div className="text-[#c99a3d] text-xs font-semibold mb-0.5">
+            <div className="border-l border-white/10 pl-2 sm:pl-4">
+              <div className="text-[#d4af37] text-xs font-semibold mb-0.5">
                 Verified
               </div>
-              <div className="text-[#111] font-bold text-sm sm:text-base leading-none">
+              <div className="text-white font-bold text-sm sm:text-base leading-none">
                 {BUSINESS.reviewCount}+ Reviews
               </div>
-              <div className="text-[#777] text-[10px] sm:text-xs mt-0.5">Happy Clients</div>
+              <div className="text-gray-400 text-[10px] sm:text-xs mt-0.5">Happy Clients</div>
             </div>
 
             {/* Location */}
-            <div className="border-l border-[#f0ece4] pl-2 sm:pl-4">
-              <div className="text-[#c99a3d] text-xs font-semibold mb-0.5">
+            <div className="border-l border-white/10 pl-2 sm:pl-4">
+              <div className="text-[#d4af37] text-xs font-semibold mb-0.5">
                 Studio
               </div>
-              <div className="text-[#111] font-bold text-sm sm:text-base leading-none">
+              <div className="text-white font-bold text-sm sm:text-base leading-none">
                 Chelur Rd
               </div>
-              <div className="text-[#777] text-[10px] sm:text-xs mt-0.5">Chintamani</div>
+              <div className="text-gray-400 text-[10px] sm:text-xs mt-0.5">Chintamani</div>
             </div>
           </div>
         </div>

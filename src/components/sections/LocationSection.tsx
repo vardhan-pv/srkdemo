@@ -28,7 +28,7 @@ export default function LocationSection() {
   return (
     <section
       id="location"
-      className="section-py warm-bg"
+      className="section-py bg-[#0e0e0e]"
       aria-labelledby="location-heading"
       ref={sectionRef}
     >
@@ -37,23 +37,23 @@ export default function LocationSection() {
         <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c99a3d]">
+            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
               Our Studio
             </span>
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
           </div>
-          <h2 id="location-heading" className="text-2xl sm:text-4xl font-bold text-[#111] mb-4">
+          <h2 id="location-heading" className="text-2xl sm:text-4xl font-bold text-white mb-4">
             Visit SRK Interiors in Chintamani
           </h2>
-          <p className="text-[#6b6b6b] text-sm sm:text-base leading-relaxed">
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
             Conveniently located on Chelur Road. Drop in to discuss your home or commercial interior project in person.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
-          {/* Map Column (7 cols on lg) */}
+          {/* Map Column */}
           <div className="lg:col-span-7">
-            <div className="map-container shadow-md rounded-2xl overflow-hidden border border-[#e7e2d8]">
+            <div className="map-container shadow-2xl rounded-2xl overflow-hidden border border-[#c99a3d]/30">
               {mapLoaded ? (
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7741.285!2d78.0539!3d13.4016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb2058503f0266f%3A0xfa89dad32c35cea!2sSRK%20INTERIORS!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
@@ -63,12 +63,12 @@ export default function LocationSection() {
                   className="w-full h-full border-0"
                 />
               ) : (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#f4f4f4] rounded-2xl">
-                  <LocationIcon className="w-10 h-10 text-[#c99a3d] mb-3 animate-bounce" />
-                  <p className="text-sm text-[#111] font-semibold">
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#141414] rounded-2xl border border-[#c99a3d]/20">
+                  <LocationIcon className="w-10 h-10 text-[#d4af37] mb-3 animate-bounce" />
+                  <p className="text-sm text-white font-semibold">
                     SRK Interiors — Chelur Road, Chintamani
                   </p>
-                  <p className="text-xs text-[#9a9a9a] mt-1">
+                  <p className="text-xs text-gray-400 mt-1">
                     Loading interactive map...
                   </p>
                 </div>
@@ -81,7 +81,7 @@ export default function LocationSection() {
                 href={getDirectionsUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary flex-1 justify-center text-sm py-3"
+                className="btn btn-primary flex-1 justify-center text-sm py-3 shadow-md"
                 id="location-directions-btn"
                 onClick={() => {
                   if (typeof window !== "undefined" && window.gtag) {
@@ -97,22 +97,22 @@ export default function LocationSection() {
                 className="btn btn-outline flex-1 justify-center text-sm py-3"
                 id="location-maps-btn"
               >
-                <PhoneIcon className="w-4 h-4 text-[#c99a3d]" />
+                <PhoneIcon className="w-4 h-4 text-[#d4af37]" />
                 <span>Call Studio: {BUSINESS.phoneDisplay}</span>
               </a>
             </div>
           </div>
 
-          {/* Details Column (5 cols on lg) */}
+          {/* Details Column */}
           <div className="lg:col-span-5 space-y-4">
             {/* Address Card */}
-            <div className="p-5 bg-white border border-[#e7e2d8] rounded-xl flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#fdf8ee] text-[#c99a3d] flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div className="p-5 bg-[#141414] border border-[#c99a3d]/25 rounded-xl flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <LocationIcon className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-[#111] text-base mb-1">Studio Address</h3>
-                <address className="not-italic text-[#4a4a4a] text-sm leading-relaxed">
+                <h3 className="font-semibold text-white text-base mb-1">Studio Address</h3>
+                <address className="not-italic text-gray-300 text-sm leading-relaxed">
                   {BUSINESS.address.street},<br />
                   Near Valli Bhai Shop,<br />
                   {BUSINESS.address.city}, {BUSINESS.address.state} — {BUSINESS.address.pin}
@@ -121,32 +121,32 @@ export default function LocationSection() {
             </div>
 
             {/* Phone Card */}
-            <div className="p-5 bg-white border border-[#e7e2d8] rounded-xl flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#fdf8ee] text-[#c99a3d] flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div className="p-5 bg-[#141414] border border-[#c99a3d]/25 rounded-xl flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <PhoneIcon className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-[#111] text-base mb-1">Direct Contact</h3>
+                <h3 className="font-semibold text-white text-base mb-1">Direct Contact</h3>
                 <a
                   href={`tel:${BUSINESS.phone}`}
-                  className="text-[#c99a3d] font-semibold text-base hover:underline"
+                  className="text-[#d4af37] font-semibold text-base hover:underline"
                 >
                   {BUSINESS.phoneDisplay}
                 </a>
-                <p className="text-xs text-[#6b6b6b] mt-0.5">Call or WhatsApp anytime</p>
+                <p className="text-xs text-gray-400 mt-0.5">Call or WhatsApp anytime</p>
               </div>
             </div>
 
             {/* Hours Card */}
-            <div className="p-5 bg-white border border-[#e7e2d8] rounded-xl flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[#fdf8ee] text-[#c99a3d] flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div className="p-5 bg-[#141414] border border-[#c99a3d]/25 rounded-xl flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <ClockIcon className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-[#111] text-base mb-1">Working Hours</h3>
-                <p className="text-sm text-[#4a4a4a] font-medium">Monday – Sunday: 9:00 AM – 7:00 PM</p>
-                <div className="inline-flex items-center gap-1.5 text-xs text-green-700 bg-green-50 px-2 py-0.5 rounded-full mt-2 font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                <h3 className="font-semibold text-white text-base mb-1">Working Hours</h3>
+                <p className="text-sm text-gray-300 font-medium">Monday – Sunday: 9:00 AM – 7:00 PM</p>
+                <div className="inline-flex items-center gap-1.5 text-xs text-[#d4af37] bg-[#c99a3d]/10 border border-[#c99a3d]/25 px-2.5 py-0.5 rounded-full mt-2 font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
                   <span>Open All 7 Days a Week</span>
                 </div>
               </div>

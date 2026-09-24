@@ -5,7 +5,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="section-py warm-bg"
+      className="section-py bg-[#0e0e0e]"
       aria-labelledby="services-heading"
     >
       <div className="container">
@@ -13,17 +13,17 @@ export default function ServicesSection() {
         <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c99a3d]">
+            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
               What We Offer
             </span>
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
           </div>
-          <h2 id="services-heading" className="text-2xl sm:text-4xl font-bold text-[#111] mb-4">
+          <h2 id="services-heading" className="text-2xl sm:text-4xl font-bold text-white mb-4">
             Our Interior Design Services
           </h2>
-          <p className="text-[#6b6b6b] text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
             From complete home interiors to custom modular kitchens — we provide
-            end-to-end interior solutions tailored to your space and budget.
+            turnkey interior solutions tailored to your space and budget.
           </p>
         </div>
 
@@ -35,12 +35,12 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-12 p-6 sm:p-8 bg-white border border-[#e7e2d8] rounded-2xl text-center max-w-2xl mx-auto shadow-sm">
-          <h3 className="text-lg font-semibold text-[#111] mb-2">
+        <div className="mt-12 p-6 sm:p-8 bg-[#141414] border border-[#c99a3d]/30 rounded-2xl text-center max-w-2xl mx-auto shadow-xl">
+          <h3 className="text-lg font-semibold text-white mb-2">
             Have a custom requirement in mind?
           </h3>
-          <p className="text-[#6b6b6b] text-sm mb-6 max-w-md mx-auto">
-            Share your floor plan or requirements with our team in Chintamani for a personalized estimate.
+          <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">
+            Share your floor plan or ideas with our team in Chintamani for a personalized estimate and material advice.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -74,35 +74,35 @@ interface ServiceCardProps {
 
 function ServiceCard({ service }: ServiceCardProps) {
   return (
-    <div className="bg-white border border-[#e7e2d8] rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#c99a3d]/50 hover:shadow-md transition-all group">
+    <div className="bg-[#161616] border border-[#c99a3d]/20 rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-[#c99a3d] hover:shadow-[0_8px_30px_rgba(201,154,61,0.15)] transition-all group">
       <div>
         {/* Top: Icon + Badge */}
         <div className="flex items-center justify-between mb-4">
-          <div className="w-12 h-12 rounded-xl bg-[#fdf8ee] text-[#c99a3d] flex items-center justify-center group-hover:bg-[#c99a3d] group-hover:text-white transition-all">
+          <div className="w-12 h-12 rounded-xl bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center group-hover:bg-[#c99a3d] group-hover:text-black transition-all">
             <ServiceIcon type={service.icon} className="w-6 h-6" />
           </div>
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9a9a9a] px-2 py-0.5 rounded-full bg-[#f4f4f4]">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#d4af37] px-2.5 py-0.5 rounded-full bg-[#c99a3d]/10 border border-[#c99a3d]/25">
             Chintamani
           </span>
         </div>
 
         {/* Content */}
-        <h3 className="text-lg font-semibold text-[#111] mb-2 leading-snug group-hover:text-[#c99a3d] transition-colors">
+        <h3 className="text-lg font-semibold text-white mb-2 leading-snug group-hover:text-[#d4af37] transition-colors">
           {service.name}
         </h3>
-        <p className="text-xs sm:text-sm text-[#6b6b6b] leading-relaxed mb-4">
+        <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-4">
           {service.shortDescription}
         </p>
       </div>
 
       {/* Card Action */}
-      <div className="pt-3 border-t border-[#f0ece4] flex items-center justify-between mt-auto">
-        <span className="text-xs text-[#9a9a9a]">Direct Consultation</span>
+      <div className="pt-3 border-t border-white/10 flex items-center justify-between mt-auto">
+        <span className="text-xs text-gray-500">Direct Consultation</span>
         <a
           href={`https://wa.me/917019549295?text=${encodeURIComponent(service.whatsappMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-semibold text-[#c99a3d] hover:text-[#a97822] flex items-center gap-1 group-hover:gap-1.5 transition-all"
+          className="text-xs font-semibold text-[#d4af37] hover:text-[#f5e9c8] flex items-center gap-1 group-hover:gap-1.5 transition-all"
           id={`service-enquire-${service.id}`}
           aria-label={`Enquire about ${service.name} on WhatsApp`}
         >

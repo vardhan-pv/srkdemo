@@ -31,50 +31,50 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="section-py warm-bg"
+      className="section-py bg-[#0e0e0e]"
       aria-labelledby="about-heading"
     >
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column — About Story (7 cols on lg) */}
+          {/* Left Column — About Story */}
           <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-              <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c99a3d]">
+              <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
                 About SRK Interiors
               </span>
             </div>
-            <h2 id="about-heading" className="text-2xl sm:text-4xl font-bold text-[#111] mb-5 leading-tight">
+            <h2 id="about-heading" className="text-2xl sm:text-4xl font-bold text-white mb-5 leading-tight">
               Creating Spaces That Feel Like Home
             </h2>
             
-            <div className="space-y-4 mb-8 text-[#4a4a4a] text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 mb-8 text-gray-300 text-sm sm:text-base leading-relaxed">
               <p>
-                <strong className="text-[#111]">SRK Interiors</strong> is a dedicated interior design and execution studio located on Chelur Road, Chintamani. We specialize in turning houses and apartments into elegant, functional dream homes.
+                <strong className="text-white">SRK Interiors</strong> is a premier interior design and execution studio located on Chelur Road, Chintamani. We specialize in transforming houses and apartments into luxury, highly functional dream homes.
               </p>
               <p>
-                Whether you need an ergonomic modular kitchen, smart bedroom wardrobes, a luxurious living room setup, or an efficient office space, our experienced team ensures high craftsmanship and transparent execution.
+                Whether you need an ergonomic modular kitchen, smart bedroom wardrobes, a bespoke living room setup, or an efficient commercial office, our experienced team ensures high craftsmanship and transparent execution.
               </p>
             </div>
 
             {/* Symmetrical Rating Badge */}
-            <div className="p-4 sm:p-5 bg-white border border-[#e7e2d8] rounded-xl flex items-center justify-between sm:justify-start gap-6 max-w-md mb-8 shadow-sm">
+            <div className="p-4 sm:p-5 bg-[#161616] border border-[#c99a3d]/30 rounded-xl flex items-center justify-between sm:justify-start gap-6 max-w-md mb-8 shadow-xl">
               <div>
-                <div className="flex text-[#c99a3d] text-base mb-1" aria-label="5 stars">
+                <div className="flex text-[#d4af37] text-base mb-1" aria-label="5 stars">
                   ★★★★★
                 </div>
-                <div className="text-base font-bold text-[#111]">
+                <div className="text-base font-bold text-white">
                   {BUSINESS.rating} / 5.0
                 </div>
-                <div className="text-xs text-[#6b6b6b]">Google Verified</div>
+                <div className="text-xs text-gray-400">Google Verified</div>
               </div>
-              <div className="h-10 w-[1px] bg-[#e7e2d8]" />
+              <div className="h-10 w-[1px] bg-white/10" />
               <div>
-                <div className="text-base font-bold text-[#111]">
+                <div className="text-base font-bold text-white">
                   {BUSINESS.reviewCount}+ Reviews
                 </div>
-                <div className="text-xs text-[#6b6b6b]">100% Satisfied Clients</div>
-                <div className="text-[11px] text-[#c99a3d] font-semibold mt-0.5">Chintamani Local</div>
+                <div className="text-xs text-gray-400">100% Satisfied Clients</div>
+                <div className="text-[11px] text-[#d4af37] font-semibold mt-0.5">Chintamani Local</div>
               </div>
             </div>
 
@@ -98,24 +98,24 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right Column — Why Choose Us (6 cols on lg) */}
+          {/* Right Column — Why Choose Us */}
           <div className="lg:col-span-6 space-y-4">
-            <h3 className="text-xl font-bold text-[#111] mb-5">
+            <h3 className="text-xl font-bold text-white mb-5">
               Why Homeowners Choose SRK Interiors
             </h3>
             {WHY_CHOOSE.map((item) => (
               <div
                 key={item.title}
-                className="p-4 sm:p-5 rounded-xl border border-[#e7e2d8] bg-white hover:border-[#c99a3d]/50 hover:shadow-sm transition-all flex gap-4 items-start"
+                className="p-4 sm:p-5 rounded-xl border border-white/10 bg-[#161616] hover:border-[#c99a3d]/50 hover:shadow-lg transition-all flex gap-4 items-start"
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#fdf8ee] text-[#c99a3d] flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <WhyIcon type={item.icon} className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#111] text-base mb-1">
+                  <h4 className="font-semibold text-white text-base mb-1">
                     {item.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#6b6b6b] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                     {item.description}
                   </p>
                 </div>

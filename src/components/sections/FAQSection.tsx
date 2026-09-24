@@ -51,7 +51,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="section-py warm-bg"
+      className="section-py bg-[#0a0a0a]"
       aria-labelledby="faq-heading"
     >
       <div className="container">
@@ -60,15 +60,15 @@ export default function FAQSection() {
           <div className="text-center mb-10 sm:mb-12">
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-              <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c99a3d]">
+              <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
                 Common Questions
               </span>
               <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
             </div>
-            <h2 id="faq-heading" className="text-2xl sm:text-4xl font-bold text-[#111] mb-4">
+            <h2 id="faq-heading" className="text-2xl sm:text-4xl font-bold text-white mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-[#6b6b6b] text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Have questions about our process, pricing, or timelines? Here are answers to common queries.
             </p>
           </div>
@@ -80,8 +80,10 @@ export default function FAQSection() {
               return (
                 <div
                   key={item.id}
-                  className={`bg-white rounded-xl border transition-all overflow-hidden ${
-                    isOpen ? "border-[#c99a3d] shadow-sm" : "border-[#e7e2d8]"
+                  className={`bg-[#141414] rounded-xl border transition-all overflow-hidden ${
+                    isOpen
+                      ? "border-[#c99a3d] shadow-[0_4px_20px_rgba(201,154,61,0.12)]"
+                      : "border-white/10 hover:border-[#c99a3d]/40"
                   }`}
                 >
                   <button
@@ -91,12 +93,12 @@ export default function FAQSection() {
                     aria-controls={`answer-${item.id}`}
                     id={`question-${item.id}`}
                   >
-                    <span className="font-semibold text-sm sm:text-base text-[#111]">
+                    <span className="font-semibold text-sm sm:text-base text-white">
                       {item.question}
                     </span>
                     <span
                       className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
-                        isOpen ? "bg-[#c99a3d] text-white rotate-180" : "bg-[#f4f4f4] text-[#6b6b6b]"
+                        isOpen ? "bg-[#c99a3d] text-black rotate-180 font-bold" : "bg-white/10 text-gray-400"
                       }`}
                     >
                       <ChevronIcon className="w-4 h-4" />
@@ -107,7 +109,7 @@ export default function FAQSection() {
                       id={`answer-${item.id}`}
                       role="region"
                       aria-labelledby={`question-${item.id}`}
-                      className="px-4 pb-5 sm:px-5 sm:pb-5 text-[#6b6b6b] text-sm sm:text-[15px] leading-relaxed border-t border-[#f0ece4] pt-3.5"
+                      className="px-4 pb-5 sm:px-5 sm:pb-5 text-gray-300 text-sm sm:text-[15px] leading-relaxed border-t border-white/10 pt-3.5"
                     >
                       {item.answer}
                     </div>
@@ -119,12 +121,12 @@ export default function FAQSection() {
 
           {/* Bottom CTA */}
           <div className="mt-10 text-center">
-            <p className="text-[#6b6b6b] text-sm mb-4">
+            <p className="text-gray-400 text-sm mb-4">
               Still have questions about your specific floor plan?
             </p>
             <a
               href="#contact"
-              className="btn btn-primary px-7 py-3 text-sm"
+              className="btn btn-primary px-7 py-3 text-sm shadow-md"
               id="faq-contact-btn"
             >
               Ask Our Interior Designers

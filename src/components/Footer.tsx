@@ -26,30 +26,30 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-[#111111] text-white border-t border-white/10"
+      className="bg-[#050505] text-white border-t border-[#c99a3d]/25"
       role="contentinfo"
       aria-label="Site footer"
     >
       {/* Main Footer Container */}
       <div className="container py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
-          {/* Brand Column (4 cols on lg) */}
+          {/* Brand Column */}
           <div className="lg:col-span-4">
             <SRKLogo className="h-10 w-auto mb-4" variant="white" />
             <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-sm">
               Premier interior design studio in Chintamani, Karnataka. Crafting tailored homes, modular kitchens, and elegant living spaces.
             </p>
             {/* Google Rating strip */}
-            <div className="inline-flex items-center gap-2 p-2.5 rounded-lg bg-white/5 border border-white/10">
-              <span className="text-[#e8c96a] text-sm tracking-wider">★★★★★</span>
+            <div className="inline-flex items-center gap-2 p-2.5 rounded-lg bg-[#111111] border border-[#c99a3d]/30 shadow-md">
+              <span className="text-[#d4af37] text-sm tracking-wider">★★★★★</span>
               <span className="text-xs font-semibold text-white">5.0 Rating</span>
               <span className="text-xs text-gray-400">· 30+ Reviews</span>
             </div>
           </div>
 
-          {/* Services Column (3 cols on lg) */}
+          {/* Services Column */}
           <div className="lg:col-span-3">
-            <h3 className="text-white font-semibold text-xs tracking-widest uppercase mb-4">
+            <h3 className="text-[#f5e9c8] font-bold text-xs tracking-widest uppercase mb-4">
               Our Services
             </h3>
             <ul className="space-y-2.5">
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#e8c96a] transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -66,9 +66,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links Column (2 cols on lg) */}
+          {/* Quick Links Column */}
           <div className="lg:col-span-2">
-            <h3 className="text-white font-semibold text-xs tracking-widest uppercase mb-4">
+            <h3 className="text-[#f5e9c8] font-bold text-xs tracking-widest uppercase mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -76,7 +76,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-gray-400 hover:text-[#e8c96a] transition-colors"
+                    className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -85,15 +85,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Details Column (3 cols on lg) */}
+          {/* Contact Details Column */}
           <div className="lg:col-span-3">
-            <h3 className="text-white font-semibold text-xs tracking-widest uppercase mb-4">
+            <h3 className="text-[#f5e9c8] font-bold text-xs tracking-widest uppercase mb-4">
               Contact & Studio
             </h3>
             <address className="not-italic space-y-3.5">
               {/* Address */}
               <div className="flex gap-3">
-                <LocationIcon className="w-4 h-4 text-[#e8c96a] mt-1 flex-shrink-0" />
+                <LocationIcon className="w-4 h-4 text-[#d4af37] mt-1 flex-shrink-0" />
                 <a
                   href={BUSINESS.mapsUrl}
                   target="_blank"
@@ -109,7 +109,7 @@ export default function Footer() {
 
               {/* Phone */}
               <div className="flex gap-3 items-center">
-                <PhoneIcon className="w-4 h-4 text-[#e8c96a] flex-shrink-0" />
+                <PhoneIcon className="w-4 h-4 text-[#d4af37] flex-shrink-0" />
                 <a
                   href={`tel:${BUSINESS.phone}`}
                   className="text-sm text-gray-300 hover:text-white font-medium transition-colors"
@@ -135,7 +135,7 @@ export default function Footer() {
 
               {/* Hours */}
               <div className="flex gap-3">
-                <ClockIcon className="w-4 h-4 text-[#e8c96a] mt-0.5 flex-shrink-0" />
+                <ClockIcon className="w-4 h-4 text-[#d4af37] mt-0.5 flex-shrink-0" />
                 <p className="text-xs text-gray-400">
                   Mon – Sun: 9:00 AM – 7:00 PM (All 7 Days)
                 </p>
@@ -146,16 +146,16 @@ export default function Footer() {
       </div>
 
       {/* Bottom Legal & Copyright Bar */}
-      <div className="border-t border-white/10 bg-black/40">
+      <div className="border-t border-white/5 bg-[#030303]">
         <div className="container py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-500">
               © {currentYear} SRK Interiors. All rights reserved. Chintamani, Karnataka.
             </p>
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy"
-                className="text-xs text-gray-400 hover:text-[#e8c96a] transition-colors"
+                className="text-xs text-gray-500 hover:text-[#d4af37] transition-colors"
               >
                 Privacy Policy
               </Link>
@@ -163,7 +163,7 @@ export default function Footer() {
                 href={BUSINESS.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-gray-400 hover:text-[#e8c96a] transition-colors"
+                className="text-xs text-gray-500 hover:text-[#d4af37] transition-colors"
               >
                 Google Maps Profile ↗
               </a>
@@ -172,7 +172,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Mobile bottom buffer so sticky bar never obscures footer copyright */}
+      {/* Mobile bottom buffer */}
       <div className="h-20 lg:hidden" aria-hidden="true" />
     </footer>
   );

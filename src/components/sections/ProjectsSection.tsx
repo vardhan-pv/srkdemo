@@ -30,7 +30,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="section-py"
+      className="section-py bg-[#0a0a0a]"
       aria-labelledby="projects-heading"
     >
       <div className="container">
@@ -38,20 +38,20 @@ export default function ProjectsSection() {
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c99a3d]">
+            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
               Our Portfolio
             </span>
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
           </div>
-          <h2 id="projects-heading" className="text-2xl sm:text-4xl font-bold text-[#111] mb-4">
+          <h2 id="projects-heading" className="text-2xl sm:text-4xl font-bold text-white mb-4">
             Recent Projects in Chintamani
           </h2>
-          <p className="text-[#6b6b6b] text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
-            Explore our curated residential and commercial interior spaces crafted with quality materials and refined finishes.
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+            Explore our curated residential and commercial interior spaces crafted with luxury materials and refined execution.
           </p>
         </div>
 
-        {/* Category Filter Pills (Native scroll on mobile, centered on desktop) */}
+        {/* Category Filter Pills */}
         <div className="flex items-center overflow-x-auto pb-3 mb-8 gap-2.5 sm:justify-center -mx-4 px-4 sm:mx-0 scrollbar-none" role="tablist" aria-label="Filter projects by category">
           {PROJECT_CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat.id;
@@ -63,8 +63,8 @@ export default function ProjectsSection() {
                 aria-selected={isActive}
                 className={`whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all flex-shrink-0 cursor-pointer ${
                   isActive
-                    ? "bg-[#c99a3d] text-white border border-[#c99a3d] shadow-sm font-semibold"
-                    : "bg-white text-[#4a4a4a] border border-[#e7e2d8] hover:border-[#c99a3d] hover:text-[#c99a3d]"
+                    ? "bg-gradient-to-r from-[#d4af37] to-[#c99a3d] text-black font-bold border-transparent shadow-[0_2px_14px_rgba(201,154,61,0.35)]"
+                    : "bg-[#161616] text-gray-300 border border-white/10 hover:border-[#c99a3d] hover:text-[#d4af37]"
                 }`}
                 id={`category-${cat.id}`}
               >
@@ -79,11 +79,11 @@ export default function ProjectsSection() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white border border-[#e7e2d8] rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all group flex flex-col cursor-pointer"
+              className="bg-[#141414] border border-[#c99a3d]/25 rounded-xl overflow-hidden shadow-lg hover:border-[#c99a3d] hover:shadow-[0_8px_32px_rgba(201,154,61,0.2)] transition-all group flex flex-col cursor-pointer"
               onClick={() => openLightbox(project.thumbnail, project.title)}
             >
               {/* Image Frame */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-black/40">
                 <Image
                   src={project.thumbnail}
                   alt={project.altText}
@@ -92,21 +92,21 @@ export default function ProjectsSection() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <span className="text-white text-xs font-semibold uppercase tracking-wider bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-md">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                  <span className="text-[#f5e9c8] text-xs font-semibold uppercase tracking-wider bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-md border border-[#c99a3d]/40">
                     Click to Enlarge
                   </span>
                 </div>
               </div>
 
-              {/* Card Footer with clean alignment and padding */}
-              <div className="p-4 sm:p-5 flex items-center justify-between gap-3 mt-auto">
+              {/* Card Footer */}
+              <div className="p-4 sm:p-5 flex items-center justify-between gap-3 mt-auto bg-[#141414]">
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-semibold text-[#111] text-base truncate group-hover:text-[#c99a3d] transition-colors">
+                  <h3 className="font-semibold text-white text-base truncate group-hover:text-[#d4af37] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-[#6b6b6b] mt-0.5 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#c99a3d]" />
+                  <p className="text-xs text-gray-400 mt-0.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
                     <span>{project.location || "Chintamani, Karnataka"}</span>
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function ProjectsSection() {
                       window.gtag("event", "project_enquiry", { project_id: project.id });
                     }
                   }}
-                  className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full bg-[#fdf8ee] text-[#c99a3d] border border-[#f5e9c8] hover:bg-[#c99a3d] hover:text-white transition-all whitespace-nowrap"
+                  className="flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 hover:bg-[#c99a3d] hover:text-black transition-all whitespace-nowrap"
                   id={`project-enquire-${project.id}`}
                   aria-label={`Get a similar design to ${project.title} on WhatsApp`}
                 >
@@ -135,7 +135,7 @@ export default function ProjectsSection() {
 
         {/* Bottom Portfolio CTA */}
         <div className="mt-12 text-center">
-          <p className="text-[#6b6b6b] text-sm mb-4">
+          <p className="text-gray-400 text-sm mb-4">
             Want to see more completed work or 3D design walkthroughs?
           </p>
           <a
@@ -156,7 +156,7 @@ export default function ProjectsSection() {
       {/* Lightbox Modal */}
       {lightboxOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
           onClick={closeLightbox}
           role="dialog"
           aria-modal="true"
@@ -167,13 +167,13 @@ export default function ProjectsSection() {
           >
             <button
               onClick={closeLightbox}
-              className="absolute -top-12 right-0 text-white hover:text-[#c99a3d] p-2 text-sm font-semibold flex items-center gap-1.5"
+              className="absolute -top-12 right-0 text-white hover:text-[#d4af37] p-2 text-sm font-semibold flex items-center gap-1.5"
               aria-label="Close image viewer"
             >
               <span>Close</span>
               <span className="text-xl">✕</span>
             </button>
-            <div className="relative w-full aspect-[4/3] max-h-[75vh] rounded-lg overflow-hidden bg-black">
+            <div className="relative w-full aspect-[4/3] max-h-[75vh] rounded-lg overflow-hidden bg-black border border-[#c99a3d]/30">
               <Image
                 src={lightboxImage}
                 alt={lightboxTitle}

@@ -105,10 +105,10 @@ export default function ConsultationForm() {
   return (
     <section
       id="contact"
-      className="section-py bg-[#111111] relative overflow-hidden"
+      className="section-py bg-[#080808] relative overflow-hidden"
       aria-labelledby="contact-heading"
     >
-      {/* Decorative top border accent */}
+      {/* Decorative top gold gradient accent */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c99a3d] to-transparent opacity-60" />
 
       <div className="container relative z-10">
@@ -117,7 +117,7 @@ export default function ConsultationForm() {
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-              <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#e8c96a]">
+              <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
                 Get in Touch
               </span>
             </div>
@@ -127,13 +127,13 @@ export default function ConsultationForm() {
               className="text-white text-3xl sm:text-4xl font-bold mb-4 leading-tight"
             >
               Planning Your{" "}
-              <span className="italic text-[#e8c96a] font-normal">
+              <span className="italic text-[#d4af37] font-normal">
                 Dream Interior?
               </span>
             </h2>
 
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
-              Tell us what you&apos;re looking for and our team will get in touch for a free initial consultation and site estimate in Chintamani.
+              Tell us what you&apos;re looking for and our team will get in touch for a free design consultation and site estimate in Chintamani.
             </p>
 
             {/* Direct Contact List */}
@@ -141,10 +141,10 @@ export default function ConsultationForm() {
               {/* Phone */}
               <a
                 href={`tel:${BUSINESS.phone}`}
-                className="flex items-center gap-4 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#c99a3d]/50 hover:bg-white/10 transition-all group"
+                className="flex items-center gap-4 p-3.5 rounded-xl bg-[#141414] border border-[#c99a3d]/25 hover:border-[#c99a3d] hover:bg-[#181818] transition-all group"
                 id="contact-phone-link"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/20 text-[#e8c96a] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                   <PhoneIcon className="w-5 h-5" />
                 </div>
                 <div>
@@ -158,7 +158,7 @@ export default function ConsultationForm() {
                 href={getWhatsAppUrl("Hello SRK Interiors, I would like to schedule a free interior consultation.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#25d366]/50 hover:bg-white/10 transition-all group"
+                className="flex items-center gap-4 p-3.5 rounded-xl bg-[#141414] border border-[#c99a3d]/25 hover:border-[#25d366]/60 hover:bg-[#181818] transition-all group"
                 id="contact-whatsapp-link"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#25d366]/20 text-[#25d366] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -171,8 +171,8 @@ export default function ConsultationForm() {
               </a>
 
               {/* Address */}
-              <div className="flex items-center gap-4 p-3.5 rounded-xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/20 text-[#e8c96a] flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-4 p-3.5 rounded-xl bg-[#141414] border border-[#c99a3d]/25">
+                <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0">
                   <LocationIcon className="w-5 h-5" />
                 </div>
                 <div>
@@ -184,8 +184,8 @@ export default function ConsultationForm() {
               </div>
 
               {/* Hours */}
-              <div className="flex items-center gap-4 p-3.5 rounded-xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/20 text-[#e8c96a] flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-4 p-3.5 rounded-xl bg-[#141414] border border-[#c99a3d]/25">
+                <div className="w-10 h-10 rounded-lg bg-[#c99a3d]/15 text-[#d4af37] border border-[#c99a3d]/30 flex items-center justify-center flex-shrink-0">
                   <ClockIcon className="w-5 h-5" />
                 </div>
                 <div>
@@ -198,17 +198,17 @@ export default function ConsultationForm() {
 
           {/* Right Column — Consultation Form Card (7 cols on lg) */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
+            <div className="bg-[#141414] border border-[#c99a3d]/35 rounded-2xl p-6 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.8)]">
               {formState === "success" ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5 text-green-600">
+                  <div className="w-16 h-16 bg-[#c99a3d]/20 text-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-5">
                     <CheckIcon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#111] mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     Request Received!
                   </h3>
-                  <p className="text-[#6b6b6b] text-base mb-6 max-w-sm mx-auto">
-                    Thank you, <strong className="text-[#111]">{data.name}</strong>. Our interior design team will contact you shortly on <strong className="text-[#111]">{data.phone}</strong>.
+                  <p className="text-gray-300 text-base mb-6 max-w-sm mx-auto">
+                    Thank you, <strong className="text-white">{data.name}</strong>. Our interior design team will contact you shortly on <strong className="text-white">{data.phone}</strong>.
                   </p>
                   <a
                     href={getWhatsAppUrl(
@@ -226,16 +226,16 @@ export default function ConsultationForm() {
               ) : (
                 <>
                   <div className="mb-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#111] mb-1">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                       Request a Free Consultation
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#6b6b6b]">
+                    <p className="text-xs sm:text-sm text-gray-400">
                       No commitment required. We respect your privacy.
                     </p>
                   </div>
 
                   {formState === "error" && (
-                    <div className="mb-5 p-3.5 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                    <div className="mb-5 p-3.5 bg-red-950/60 border border-red-500/50 rounded-lg text-red-300 text-sm">
                       Something went wrong. Please call us directly at {BUSINESS.phoneDisplay} or WhatsApp us.
                     </div>
                   )}
@@ -243,8 +243,8 @@ export default function ConsultationForm() {
                   <form onSubmit={handleSubmit} noValidate aria-label="Consultation request form" className="space-y-4">
                     {/* Name */}
                     <div>
-                      <label htmlFor="name" className="block text-xs font-semibold text-[#333] uppercase tracking-wider mb-1.5">
-                        Your Full Name <span className="text-red-500">*</span>
+                      <label htmlFor="name" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                        Your Full Name <span className="text-[#d4af37]">*</span>
                       </label>
                       <input
                         type="text"
@@ -253,22 +253,22 @@ export default function ConsultationForm() {
                         value={data.name}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.name ? "border-red-500 bg-red-50/30" : "border-[#e7e2d8]"
-                        } text-[#111] focus:outline-none focus:border-[#c99a3d] focus:ring-2 focus:ring-[#c99a3d]/20 transition-all text-sm`}
+                          errors.name ? "border-red-500 bg-red-950/20" : "border-white/15"
+                        } bg-[#0a0a0a] text-white placeholder-gray-500 focus:outline-none focus:border-[#c99a3d] focus:ring-1 focus:ring-[#c99a3d] transition-all text-sm`}
                         placeholder="e.g. Ramesh Kumar"
                         autoComplete="name"
                         required
                         aria-invalid={!!errors.name}
                       />
                       {errors.name && (
-                        <p className="text-xs text-red-600 mt-1 font-medium">{errors.name}</p>
+                        <p className="text-xs text-red-400 mt-1 font-medium">{errors.name}</p>
                       )}
                     </div>
 
                     {/* Phone */}
                     <div>
-                      <label htmlFor="phone" className="block text-xs font-semibold text-[#333] uppercase tracking-wider mb-1.5">
-                        Phone Number <span className="text-red-500">*</span>
+                      <label htmlFor="phone" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                        Phone Number <span className="text-[#d4af37]">*</span>
                       </label>
                       <input
                         type="tel"
@@ -277,22 +277,22 @@ export default function ConsultationForm() {
                         value={data.phone}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.phone ? "border-red-500 bg-red-50/30" : "border-[#e7e2d8]"
-                        } text-[#111] focus:outline-none focus:border-[#c99a3d] focus:ring-2 focus:ring-[#c99a3d]/20 transition-all text-sm`}
+                          errors.phone ? "border-red-500 bg-red-950/20" : "border-white/15"
+                        } bg-[#0a0a0a] text-white placeholder-gray-500 focus:outline-none focus:border-[#c99a3d] focus:ring-1 focus:ring-[#c99a3d] transition-all text-sm`}
                         placeholder="e.g. +91 98765 43210"
                         autoComplete="tel"
                         required
                         aria-invalid={!!errors.phone}
                       />
                       {errors.phone && (
-                        <p className="text-xs text-red-600 mt-1 font-medium">{errors.phone}</p>
+                        <p className="text-xs text-red-400 mt-1 font-medium">{errors.phone}</p>
                       )}
                     </div>
 
                     {/* Requirement Select */}
                     <div>
-                      <label htmlFor="requirement" className="block text-xs font-semibold text-[#333] uppercase tracking-wider mb-1.5">
-                        What Are You Looking For? <span className="text-red-500">*</span>
+                      <label htmlFor="requirement" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                        What Are You Looking For? <span className="text-[#d4af37]">*</span>
                       </label>
                       <select
                         id="requirement"
@@ -300,27 +300,27 @@ export default function ConsultationForm() {
                         value={data.requirement}
                         onChange={handleChange}
                         className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.requirement ? "border-red-500 bg-red-50/30" : "border-[#e7e2d8]"
-                        } text-[#111] bg-white focus:outline-none focus:border-[#c99a3d] focus:ring-2 focus:ring-[#c99a3d]/20 transition-all text-sm`}
+                          errors.requirement ? "border-red-500 bg-red-950/20" : "border-white/15"
+                        } bg-[#0a0a0a] text-white focus:outline-none focus:border-[#c99a3d] focus:ring-1 focus:ring-[#c99a3d] transition-all text-sm`}
                         required
                         aria-invalid={!!errors.requirement}
                       >
-                        <option value="">Select your requirement</option>
+                        <option value="" className="bg-[#111] text-gray-400">Select your requirement</option>
                         {REQUIREMENT_OPTIONS.map((opt) => (
-                          <option key={opt} value={opt}>
+                          <option key={opt} value={opt} className="bg-[#111] text-white">
                             {opt}
                           </option>
                         ))}
                       </select>
                       {errors.requirement && (
-                        <p className="text-xs text-red-600 mt-1 font-medium">{errors.requirement}</p>
+                        <p className="text-xs text-red-400 mt-1 font-medium">{errors.requirement}</p>
                       )}
                     </div>
 
                     {/* Message */}
                     <div>
-                      <label htmlFor="message" className="block text-xs font-semibold text-[#333] uppercase tracking-wider mb-1.5">
-                        Tell Us About Your Space <span className="text-gray-400 font-normal">(Optional)</span>
+                      <label htmlFor="message" className="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">
+                        Tell Us About Your Space <span className="text-gray-500 font-normal">(Optional)</span>
                       </label>
                       <textarea
                         id="message"
@@ -328,7 +328,7 @@ export default function ConsultationForm() {
                         value={data.message}
                         onChange={handleChange}
                         rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-[#e7e2d8] text-[#111] focus:outline-none focus:border-[#c99a3d] focus:ring-2 focus:ring-[#c99a3d]/20 transition-all text-sm resize-none"
+                        className="w-full px-4 py-3 rounded-lg border border-white/15 bg-[#0a0a0a] text-white placeholder-gray-500 focus:outline-none focus:border-[#c99a3d] focus:ring-1 focus:ring-[#c99a3d] transition-all text-sm resize-none"
                         placeholder="e.g. 2BHK flat in Chintamani, need modular kitchen and master bedroom wardrobe..."
                       />
                     </div>
@@ -337,7 +337,7 @@ export default function ConsultationForm() {
                     <button
                       type="submit"
                       disabled={isPending || formState === "loading"}
-                      className="w-full btn btn-primary py-3.5 text-base font-semibold shadow-md mt-2 flex items-center justify-center gap-2"
+                      className="w-full btn btn-primary py-3.5 text-base font-bold shadow-lg mt-2 flex items-center justify-center gap-2"
                       id="form-submit-btn"
                     >
                       {isPending || formState === "loading" ? (
@@ -347,7 +347,7 @@ export default function ConsultationForm() {
                       )}
                     </button>
 
-                    <p className="text-center text-[11px] text-[#9a9a9a] pt-1">
+                    <p className="text-center text-[11px] text-gray-500 pt-1">
                       🔒 Your phone number is strictly kept confidential.
                     </p>
                   </form>

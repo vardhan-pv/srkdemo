@@ -21,17 +21,17 @@ export default function StickyActionBar() {
       role="region"
       aria-label="Quick mobile contact actions"
     >
-      <div className="bg-white/95 backdrop-blur-md border-t border-[#e7e2d8] shadow-[0_-4px_20px_rgba(0,0,0,0.12)] px-3 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))]">
+      <div className="bg-[#0a0a0a]/95 backdrop-blur-md border-t border-[#c99a3d]/30 shadow-[0_-4px_25px_rgba(0,0,0,0.8)] px-3 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))]">
         <div className="grid grid-cols-3 gap-2.5 w-full max-w-md mx-auto">
           {/* Call Studio */}
           <a
             href={getCallUrl()}
-            className="flex flex-col items-center justify-center gap-1 py-2 px-1 bg-[#1a1a1a] text-white rounded-xl min-h-[52px] transition-all active:scale-95 shadow-sm"
+            className="flex flex-col items-center justify-center gap-1 py-2 px-1 bg-[#181818] border border-white/10 text-white rounded-xl min-h-[52px] transition-all active:scale-95 shadow-md"
             id="sticky-call-btn"
             aria-label={`Call SRK Interiors at ${BUSINESS.phoneDisplay}`}
             onClick={() => trackEvent("call_click", "sticky_bar")}
           >
-            <PhoneIcon className="w-5 h-5 text-gray-200" />
+            <PhoneIcon className="w-5 h-5 text-[#d4af37]" />
             <span className="text-[11px] font-semibold tracking-wide">Call</span>
           </a>
 
@@ -40,7 +40,7 @@ export default function StickyActionBar() {
             href={getWhatsAppUrl("Hello SRK Interiors, I would like to enquire about your interior design services.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-1 py-2 px-1 bg-[#25d366] text-white rounded-xl min-h-[52px] transition-all active:scale-95 shadow-md shadow-green-600/20"
+            className="flex flex-col items-center justify-center gap-1 py-2 px-1 bg-[#25d366] text-white rounded-xl min-h-[52px] transition-all active:scale-95 shadow-md shadow-green-600/30"
             id="sticky-whatsapp-btn"
             aria-label="WhatsApp SRK Interiors"
             onClick={() => trackEvent("whatsapp_click", "sticky_bar")}
@@ -54,13 +54,13 @@ export default function StickyActionBar() {
             href={getDirectionsUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-1 py-2 px-1 bg-[#c99a3d] text-white rounded-xl min-h-[52px] transition-all active:scale-95 shadow-md shadow-[#c99a3d]/20"
+            className="flex flex-col items-center justify-center gap-1 py-2 px-1 bg-gradient-to-r from-[#d4af37] to-[#c99a3d] text-black rounded-xl min-h-[52px] transition-all active:scale-95 shadow-md shadow-[#c99a3d]/30 font-bold"
             id="sticky-directions-btn"
             aria-label="Get directions to SRK Interiors"
             onClick={() => trackEvent("directions_click", "sticky_bar")}
           >
-            <DirectionsIcon className="w-5 h-5" />
-            <span className="text-[11px] font-semibold tracking-wide">Directions</span>
+            <DirectionsIcon className="w-5 h-5 text-black" />
+            <span className="text-[11px] font-bold tracking-wide">Directions</span>
           </a>
         </div>
       </div>

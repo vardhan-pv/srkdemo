@@ -18,12 +18,11 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024 && menuOpen) setMenuOpen(false);
@@ -39,8 +38,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white shadow-md border-b border-[#e7e2d8]"
-            : "bg-white/95 backdrop-blur-sm"
+            ? "bg-[#080808]/95 shadow-[0_4px_24px_rgba(0,0,0,0.8)] border-b border-[#c99a3d]/30"
+            : "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#c99a3d]/20"
         }`}
         role="banner"
       >
@@ -53,7 +52,7 @@ export default function Header() {
               className="flex items-center gap-3 flex-shrink-0"
               onClick={closeMenu}
             >
-              <SRKLogo className="h-10 lg:h-12 w-auto" />
+              <SRKLogo className="h-10 lg:h-12 w-auto" variant="white" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -65,28 +64,28 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-[0.9375rem] font-medium text-[#2d2d2d] hover:text-[#c99a3d] transition-colors duration-200 relative group"
+                  className="text-[0.9375rem] font-medium text-gray-300 hover:text-[#d4af37] transition-colors duration-200 relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#c99a3d] transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#d4af37] transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Desktop Contact CTA */}
+            <div className="hidden lg:flex items-center gap-4">
               <a
                 href={`tel:${BUSINESS.phone}`}
-                className="flex items-center gap-2 text-sm font-medium text-[#2d2d2d] hover:text-[#c99a3d] transition-colors"
+                className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-[#d4af37] transition-colors"
                 id="header-call-btn"
                 onClick={() => trackEvent("call_click", "header")}
               >
-                <PhoneIcon className="w-4 h-4" />
-                {BUSINESS.phoneDisplay}
+                <PhoneIcon className="w-4 h-4 text-[#d4af37]" />
+                <span>{BUSINESS.phoneDisplay}</span>
               </a>
               <a
                 href="#contact"
-                className="btn btn-primary text-sm px-6 py-3"
+                className="btn btn-primary text-sm px-6 py-2.5 shadow-md"
                 id="header-cta-btn"
               >
                 Get Free Consultation
@@ -96,29 +95,29 @@ export default function Header() {
             {/* Mobile Actions */}
             <div className="flex lg:hidden items-center gap-2">
               <a
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrl("Hello SRK Interiors, I would like to enquire about your interior design services.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-2 bg-[#25d366] text-white text-sm font-semibold rounded-lg"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-[#25d366] text-white text-xs font-bold rounded-lg shadow-sm"
                 id="header-whatsapp-btn"
                 aria-label="WhatsApp SRK Interiors"
                 onClick={() => trackEvent("whatsapp_click", "header")}
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                <span className="hidden xs:inline">WhatsApp</span>
+                <span>WhatsApp</span>
               </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-lg text-white hover:bg-white/10 transition-colors border border-white/15"
                 aria-label={menuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
                 id="mobile-menu-toggle"
               >
                 {menuOpen ? (
-                  <CloseIcon className="w-6 h-6 text-[#111]" />
+                  <CloseIcon className="w-5 h-5 text-[#d4af37]" />
                 ) : (
-                  <MenuIcon className="w-6 h-6 text-[#111]" />
+                  <MenuIcon className="w-5 h-5 text-white" />
                 )}
               </button>
             </div>
@@ -126,10 +125,10 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Backdrop */}
       {menuOpen && (
         <div
-          className="mobile-nav-overlay lg:hidden"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[52] lg:hidden"
           onClick={closeMenu}
           aria-hidden="true"
         />
@@ -138,71 +137,73 @@ export default function Header() {
       {/* Mobile Menu Drawer */}
       <div
         id="mobile-menu"
-        className={`fixed top-0 right-0 h-full w-[300px] bg-white z-[55] shadow-2xl transform transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed top-0 right-0 h-full w-[300px] bg-[#111111] border-l border-[#c99a3d]/30 z-[55] shadow-2xl transform transition-transform duration-300 ease-out lg:hidden flex flex-col justify-between ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!menuOpen}
         role="dialog"
         aria-label="Mobile navigation menu"
       >
-        {/* Menu Header */}
-        <div className="flex items-center justify-between p-5 border-b border-[#e7e2d8]">
-          <SRKLogo className="h-9 w-auto" />
-          <button
-            onClick={closeMenu}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label="Close navigation menu"
-          >
-            <CloseIcon className="w-5 h-5 text-[#111]" />
-          </button>
+        <div>
+          {/* Menu Header */}
+          <div className="flex items-center justify-between p-5 border-b border-white/10">
+            <SRKLogo className="h-9 w-auto" variant="white" />
+            <button
+              onClick={closeMenu}
+              className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+              aria-label="Close navigation menu"
+            >
+              <CloseIcon className="w-5 h-5 text-[#d4af37]" />
+            </button>
+          </div>
+
+          {/* Nav Links */}
+          <nav className="p-5" aria-label="Mobile navigation">
+            <ul className="space-y-1.5">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="flex items-center px-4 py-3 text-base font-medium text-gray-200 hover:text-[#d4af37] hover:bg-[#c99a3d]/10 rounded-lg transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        {/* Nav Links */}
-        <nav className="p-5" aria-label="Mobile navigation">
-          <ul className="space-y-1">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={closeMenu}
-                  className="flex items-center px-4 py-3.5 text-[1rem] font-medium text-[#1a1a1a] hover:text-[#c99a3d] hover:bg-[#fdf8ee] rounded-10 transition-colors rounded-lg"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         {/* Mobile Contact Actions */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-[#e7e2d8] space-y-3">
+        <div className="p-5 border-t border-white/10 space-y-3 bg-[#0a0a0a]">
           <a
             href="#contact"
             onClick={closeMenu}
-            className="btn btn-primary w-full justify-center"
+            className="btn btn-primary w-full justify-center text-sm py-3"
             id="mobile-menu-cta"
           >
             Get Free Consultation
           </a>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2.5">
             <a
               href={`tel:${BUSINESS.phone}`}
-              className="btn btn-outline justify-center text-sm"
+              className="btn btn-outline justify-center text-xs py-2.5"
               id="mobile-menu-call"
               onClick={() => { closeMenu(); trackEvent("call_click", "mobile_menu"); }}
             >
-              <PhoneIcon className="w-4 h-4" />
-              Call
+              <PhoneIcon className="w-3.5 h-3.5 text-[#d4af37]" />
+              Call Us
             </a>
             <a
-              href={getWhatsAppUrl()}
+              href={getWhatsAppUrl("Hello SRK Interiors, I would like to enquire about your services.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp justify-center text-sm"
+              className="btn btn-whatsapp justify-center text-xs py-2.5"
               id="mobile-menu-whatsapp"
               onClick={() => { closeMenu(); trackEvent("whatsapp_click", "mobile_menu"); }}
             >
-              <WhatsAppIcon className="w-4 h-4" />
+              <WhatsAppIcon className="w-3.5 h-3.5" />
               WhatsApp
             </a>
           </div>
@@ -218,7 +219,6 @@ function trackEvent(event: string, location: string) {
   }
 }
 
-// Icons
 function PhoneIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -252,10 +252,4 @@ function CloseIcon({ className }: { className?: string }) {
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   );
-}
-
-declare global {
-  interface Window {
-    gtag?: (command: string, event: string, params?: Record<string, unknown>) => void;
-  }
 }

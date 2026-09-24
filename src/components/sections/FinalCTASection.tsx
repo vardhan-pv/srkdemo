@@ -3,21 +3,21 @@ import { getWhatsAppUrl } from "@/lib/business";
 export default function FinalCTASection() {
   return (
     <section
-      className="py-16 sm:py-24 bg-[#111111] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-[#070707] relative overflow-hidden"
       aria-labelledby="final-cta-heading"
     >
       {/* Decorative top gold gradient accent */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c99a3d] to-transparent opacity-60" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c99a3d] to-transparent opacity-80" />
 
-      {/* Subtle radial ambient background glow (does not intersect text) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#c99a3d]/5 blur-3xl pointer-events-none rounded-full" />
+      {/* Subtle radial ambient gold glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#c99a3d]/10 blur-3xl pointer-events-none rounded-full" />
 
       <div className="container relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
-            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#e8c96a]">
+            <span className="text-xs font-semibold tracking-[0.14em] uppercase text-[#f5e9c8]">
               Start Your Journey
             </span>
             <span className="w-6 h-[1.5px] bg-[#c99a3d]" />
@@ -29,7 +29,7 @@ export default function FinalCTASection() {
             className="text-white text-3xl sm:text-5xl font-bold leading-tight mb-4 tracking-tight"
           >
             Ready to Create Your
-            <span className="block italic text-[#e8c96a] font-normal mt-1">
+            <span className="block italic text-[#d4af37] font-normal mt-1">
               Dream Living Space?
             </span>
           </h2>
@@ -63,8 +63,8 @@ export default function FinalCTASection() {
           </div>
 
           {/* Trust badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs">
-            <span className="text-[#e8c96a] tracking-wider">★★★★★</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#141414] border border-[#c99a3d]/30 text-gray-300 text-xs shadow-md">
+            <span className="text-[#d4af37] tracking-wider">★★★★★</span>
             <span className="text-white font-medium">5.0 Google Rating</span>
             <span className="text-gray-500">·</span>
             <span>30+ Happy Clients in Chintamani</span>
